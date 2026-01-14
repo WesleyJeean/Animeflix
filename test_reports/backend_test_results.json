@@ -1,0 +1,73 @@
+{
+  "timestamp": "2026-01-14T00:52:59.261612",
+  "total_tests": 13,
+  "passed_tests": 11,
+  "success_rate": 84.61538461538461,
+  "results": [
+    {
+      "test": "Auth - Signup",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Anime - Get List",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Anime - Get Trending",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Anime - Get New Releases",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Anime - Get List for Details Test",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Anime - Get Details",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Anime - Get List for Episodes Test",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Anime - Get Episodes",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Anime - Get List for Recommendations Test",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Anime - Get Recommendations",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Search - Anime",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Auth - Get Me",
+      "success": false,
+      "details": "Status: 401 (Expected 200) - Not authenticated"
+    },
+    {
+      "test": "Profile - Create",
+      "success": false,
+      "details": "Status: 401 (Expected 200) - Not authenticated"
+    }
+  ]
+}
