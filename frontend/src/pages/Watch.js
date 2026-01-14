@@ -5,6 +5,7 @@ import { Button } from '../components/ui/button';
 import { Slider } from '../components/ui/slider';
 import { toast } from 'sonner';
 import axios from 'axios';
+import React from 'react';
 import ReactPlayer from 'react-player';
 
 const API_URL = process.env.REACT_APP_BACKEND_URL;

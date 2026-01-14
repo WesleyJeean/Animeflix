@@ -7,7 +7,7 @@ import { Skeleton } from '../components/ui/skeleton';
 import { Badge } from '../components/ui/badge';
 import { toast } from 'sonner';
 import axios from 'axios';
-import ReactPlayer from 'react-player/youtube';
+import ReactPlayer from 'react-player';
 
 const API_URL = process.env.REACT_APP_BACKEND_URL;
 
