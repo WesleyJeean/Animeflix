@@ -1,53 +1,46 @@
-import { useEffect } from "react";
-import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { Toaster } from './components/ui/sonner';
+import Login from './pages/Login';
+import AuthCallback from './pages/AuthCallback';
+import ProfileSelect from './pages/ProfileSelect';
+import Browse from './pages/Browse';
+import AnimeDetails from './pages/AnimeDetails';
+import Watch from './pages/Watch';
+import MyList from './pages/MyList';
+import Search from './pages/Search';
+import ProtectedRoute from './components/ProtectedRoute';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
-
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
-
+function AppRouter() {
+  const location = useLocation();
+  
+  // Check URL fragment for session_id synchronously during render
+  if (location.hash?.includes('session_id=')) {
+    return <AuthCallback />;
+  }
+  
   return (
-    <div>
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route path="/profiles" element={<ProtectedRoute><ProfileSelect /></ProtectedRoute>} />
+      <Route path="/" element={<ProtectedRoute><Browse /></ProtectedRoute>} />
+      <Route path="/anime/:animeId" element={<ProtectedRoute><AnimeDetails /></ProtectedRoute>} />
+      <Route path="/watch/:episodeId" element={<ProtectedRoute><Watch /></ProtectedRoute>} />
+      <Route path="/my-list" element={<ProtectedRoute><MyList /></ProtectedRoute>} />
+      <Route path="/search" element={<ProtectedRoute><Search /></ProtectedRoute>} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   );
-};
+}
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <Router>
+      <div className="min-h-screen bg-background text-foreground">
+        <AppRouter />
+        <Toaster position="top-center" richColors />
+      </div>
+    </Router>
   );
 }
 
