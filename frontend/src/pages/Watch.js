@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, SkipForward, Volume2, VolumeX, Maximize, Settings } from 'lucide-react';
+import { ArrowLeft, SkipForward, Volume2, VolumeX, Maximize } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Slider } from '../components/ui/slider';
 import { toast } from 'sonner';
 import axios from 'axios';
-import React from 'react';
 import ReactPlayer from 'react-player';
 
 const API_URL = process.env.REACT_APP_BACKEND_URL;
