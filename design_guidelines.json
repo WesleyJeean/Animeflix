@@ -1,0 +1,110 @@
+{
+  "typography": {
+    "font_family": {
+      "headings": "Outfit, sans-serif",
+      "body": "Inter, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "weights": {
+      "light": 300,
+      "regular": 400,
+      "medium": 500,
+      "bold": 700,
+      "black": 900
+    },
+    "sizes": {
+      "hero_title": "text-5xl md:text-7xl font-black tracking-tighter",
+      "section_title": "text-2xl md:text-3xl font-bold tracking-tight",
+      "card_title": "text-base font-semibold leading-tight",
+      "body_text": "text-sm md:text-base text-muted-foreground"
+    }
+  },
+  "colors": {
+    "palette": {
+      "background": "#0a0a0a",
+      "foreground": "#ffffff",
+      "primary": "#E50914",
+      "primary_foreground": "#ffffff",
+      "secondary": "#262626",
+      "secondary_foreground": "#ffffff",
+      "muted": "#404040",
+      "muted_foreground": "#a3a3a3",
+      "accent": "#E50914",
+      "border": "#262626",
+      "card": "#141414"
+    },
+    "gradients": {
+      "hero_overlay": "bg-gradient-to-t from-background via-background/60 to-transparent",
+      "card_overlay": "bg-gradient-to-t from-black/90 via-black/40 to-transparent"
+    }
+  },
+  "layout": {
+    "container": "max-w-[1800px] mx-auto px-4 md:px-8",
+    "spacing": {
+      "section_gap": "py-12 md:py-16",
+      "grid_gap": "gap-4 md:gap-6"
+    },
+    "grids": {
+      "browse_grid": "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4",
+      "hero_section": "relative h-[70vh] md:h-[85vh] w-full flex items-end pb-20"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-primary text-white hover:bg-primary/90 rounded-md px-6 py-2 font-bold uppercase tracking-wide transition-transform hover:scale-105",
+      "secondary": "bg-white/20 backdrop-blur-md text-white hover:bg-white/30 rounded-md px-6 py-2 font-semibold transition-colors"
+    },
+    "cards": {
+      "anime_card": "relative group aspect-[2/3] overflow-hidden rounded-md bg-card transition-all duration-300 hover:z-50 hover:scale-110 hover:shadow-2xl hover:ring-2 hover:ring-primary/50 cursor-pointer",
+      "episode_card": "flex flex-col gap-2 group cursor-pointer hover:bg-white/5 p-2 rounded-md transition-colors"
+    },
+    "navigation": {
+      "navbar": "fixed top-0 w-full z-50 bg-gradient-to-b from-black/80 to-transparent backdrop-blur-sm transition-all duration-300",
+      "scrolled": "bg-black/95 shadow-md border-b border-white/10"
+    }
+  },
+  "motion": {
+    "hover_effects": {
+      "card_zoom": "transition-transform duration-300 ease-out hover:scale-105",
+      "button_press": "active:scale-95 transition-transform"
+    },
+    "transitions": {
+      "page_load": "animate-in fade-in slide-in-from-bottom-4 duration-700",
+      "carousel_slide": "transition-transform duration-500 ease-in-out"
+    }
+  },
+  "images": {
+    "hero_backgrounds": [
+      "https://images.unsplash.com/photo-1572291244855-44aa55da2137",
+      "https://images.unsplash.com/photo-1738382785441-93e989d43362"
+    ],
+    "anime_posters": {
+      "jujutsu_kaisen": "https://images.unsplash.com/photo-1722573783570-9811ce67025e",
+      "naruto": "https://images.unsplash.com/photo-1674448417295-088682b6adec",
+      "death_note": "https://images.unsplash.com/photo-1627056503679-34051c0122c5",
+      "dragon_ball": "https://images.unsplash.com/photo-1575540325855-4b5d285a3845"
+    },
+    "avatars": [
+      "https://images.unsplash.com/photo-1697059172415-f1e08f9151bb",
+      "https://images.unsplash.com/flagged/photo-1697059171452-f74cb27b03af"
+    ]
+  },
+  "shadcn_mapping": {
+    "carousel": "Use for 'Trending Now', 'Top 10', and 'Continue Watching' rows.",
+    "dialog": "Use for 'Quick View' modal when clicking a card.",
+    "hover_card": "Use for instant details on hover (synopsis, rating).",
+    "skeleton": "Use for loading states of card grids.",
+    "avatar": "Use for user profile selection.",
+    "progress": "Use for 'Continue Watching' bars on cards.",
+    "badge": "Use for 'New', 'HD', 'Top 10' tags."
+  },
+  "universal_guidelines": [
+    "Dark Mode Only: Force dark mode classes. Do not support light mode.",
+    "Netflix Red (#E50914) is the ONLY primary accent. Use sparingly for CTAs.",
+    "Cards must expand on hover. This is the signature Netflix interaction.",
+    "Use 'Outfit' font for headings to give a modern, geometric feel.",
+    "All interactive elements must have `data-testid` attributes.",
+    "Use `lucide-react` for icons (Play, Info, Plus, Search, Bell).",
+    "Ensure video player controls overlay is accessible and fades out when inactive."
+  ]
+}
